@@ -24,6 +24,7 @@ public class RegisterInteractionHandler {
                     RedstoneRegister register = RegisterManager.findRegisterByName(lastAddedRegisterName);
                     if (register != null) {
                         register.setPosition(pos);
+                        RegReaderConfig.save();
                         player.sendMessage(Text.literal("Associated block at " + pos + " with initialize '" + lastAddedRegisterName + "'"), true);
                         lastAddedRegisterName = null; // Reset after association
                         return ActionResult.SUCCESS;
